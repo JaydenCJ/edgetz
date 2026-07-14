@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="642" viewBox="0 0 920 642" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14">
+  <!-- Terminal transcript of a real run of `edgetz show` and `edgetz verify`.
+       Text content is copied verbatim from an actual execution against
+       IANA tzdata 2025b. -->
+  <rect width="920" height="642" rx="10" fill="#0d1117"/>
+  <rect width="920" height="34" rx="10" fill="#161b22"/>
+  <rect y="20" width="920" height="14" fill="#161b22"/>
+  <circle cx="22" cy="17" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="17" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="17" r="6" fill="#28c840"/>
+  <text x="460" y="22" fill="#8b949e" text-anchor="middle" font-size="12">edgetz — cursed datetimes as fixtures</text>
+  <g fill="#c9d1d9">
+    <text x="24" y="62"><tspan fill="#7ee787">$</tspan> edgetz show weird-troll-gap-2026</text>
+    <text x="24" y="86">id                     <tspan fill="#d2a8ff">weird-troll-gap-2026</tspan></text>
+    <text x="24" y="110">category               weird-dst</text>
+    <text x="24" y="134">kind                   <tspan fill="#f85149">gap</tspan></text>
+    <text x="24" y="158">zone                   Antarctica/Troll</text>
+    <text x="24" y="182">local                  2026-03-29T02:00:00 <tspan fill="#f85149">(does not exist)</tspan></text>
+    <text x="24" y="206">utc                    - (no representable instant)</text>
+    <text x="24" y="230">expect.gap_seconds     <tspan fill="#d29922">7200</tspan></text>
+    <text x="24" y="254">expect.offset_after    +02:00</text>
+    <text x="24" y="278">expect.offset_before   +00:00</text>
+    <text x="24" y="302">expect.transition_utc  2026-03-29T01:00:00Z</text>
+    <text x="24" y="326">tags                   recurring, two-hour-dst, spring-forward, antarctica</text>
+    <text x="24" y="350">verify                 tzdata</text>
+    <text x="24" y="374">source                 IANA tzdata, antarctica (Troll station rules)</text>
+    <text x="24" y="406" fill="#8b949e">why: Norway's Troll research station jumps two full hours (+00 to +02) each</text>
+    <text x="24" y="430" fill="#8b949e">     spring -- the only 2-hour DST in tzdata; 'the gap is exactly one hour'</text>
+    <text x="24" y="454" fill="#8b949e">     fallback logic lands inside the hole it was supposed to escape.</text>
+    <text x="24" y="494"><tspan fill="#7ee787">$</tspan> edgetz verify</text>
+    <text x="24" y="518">[verify] host tzdata: 2025b</text>
+    <text x="24" y="542">[verify] <tspan fill="#7ee787">57 ok</tspan>, 0 mismatched, 1 skipped of 58 case(s)</text>
+    <text x="24" y="566" fill="#7ee787">[verify] corpus agrees with this host</text>
+    <text x="24" y="606"><tspan fill="#7ee787">$</tspan> edgetz emit --format jsonl -o cases.jsonl  <tspan fill="#8b949e"># share with the Go team</tspan></text>
+  </g>
+</svg>
